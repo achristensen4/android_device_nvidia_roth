@@ -5,7 +5,7 @@ on init
 
 on boot
     # touchscreen
-    mount ext4 /dev/block/platform/sdhci-tegra.3/by-name/FCT /mnt/factory ro
+    mount ext4 /dev/block/platform/sdhci-tegra.3/by-name/FCT /mnt/factory rw
 
 # Always start adbd on userdebug and eng builds
 on property:ro.debuggable=1
