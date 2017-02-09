@@ -30,7 +30,7 @@ on post-fs-data
 
     mkdir /data/misc/wminput 0776 system system
 
-    mount ext4 /dev/block/platform/sdhci-tegra.3/by-name/FCT /mnt/factory ro context=u:object_r:factory_file:s0
+    mount ext4 /dev/block/platform/sdhci-tegra.3/by-name/FCT /mnt/factory rw context=u:object_r:factory_file:s0
 
 on boot
 
@@ -109,10 +109,10 @@ on property:persist.sys.dpy0.colorspace=srgb
     write /sys/class/graphics/fb0/device/cmu_enable 1
 
 on property:persist.sys.dpy0.colorspace=native
-    write /sys/class/graphics/fb0/device/cmu_enable 0
+    write /sys/class/graphics/fb0/device/cmu_enable 1
 
 on property:persist.sys.dpy1.colorspace=srgb
     write /sys/class/graphics/fb1/device/cmu_enable 1
 
 on property:persist.sys.dpy1.colorspace=native
-    write /sys/class/graphics/fb1/device/cmu_enable 0
+    write /sys/class/graphics/fb1/device/cmu_enable 1
